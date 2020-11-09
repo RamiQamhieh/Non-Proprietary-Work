@@ -14,8 +14,6 @@ class Iseek:
 		self.headers = {'user-agent': 'my-app/0.0.1', 'Cadseek-Key': '181ed793a55341669132e3797bc1bff7f13cd29bd004440e809d2bfe782a3f1b'}
 		self.manifest_entries = []
 
-
-
 	def get_manifest_id (self, file_name):
 		"""Determines the proper manifest type for a given file. Right now
 		we're just going to look at file extensions, but to do this right
@@ -45,10 +43,6 @@ class Iseek:
 			return (-1)
 
     
-    
-    
-    
-
 	def import_file (self, path, name):
 
 		url = self.server_name + "/api/v1/datasets/" + dataset_name + "/models"
@@ -131,10 +125,6 @@ class Iseek:
 			self.import_file (files_location, names[i])
 			
 			
-
-
-
-
 	def initialize (self):
 		print('\nGet Datasets:\n')
 		url = self.server_name + "/api/v1/datasets"
@@ -156,7 +146,6 @@ class Iseek:
 
 		for item in self.manifest_entries:
 			print ("{0}\t{1}\t\t{2}".format (item['manifest_id'],item['extension'],item['description']))
-
 
 
 	def wait_for_task (self, task_url):
@@ -236,7 +225,6 @@ class Iseek:
 				print('ERROR')
 		
 
-
 	def upload_target_and_search (self, filename):
 		url = "{0}/api/v1/actions/uploadsearchtarget".format(self.server_name)
 
@@ -281,7 +269,6 @@ dataset_name = "test1"
 #import files test
 #iseek.import_files (dataset_name, files_location)
 
-
 #classification test
 classifier_task = iseek.classify("test1")
 print ("classifier task returned", classifier_task)
@@ -292,10 +279,8 @@ print("Testing 'task not found' error")
 iseek.wait_for_task("http://127.0.0.1:80/api/v1/tasks/9722b20d-6680-41c8-8c2d-c2b28efd8284")
 print("Done\n\n")
 
-
 print ("Testing upload search target")
 iseek.upload_target_and_search ("test_files\\15h3.prt")
-
 
 # test metadata search
 iseek.metadata_search()
