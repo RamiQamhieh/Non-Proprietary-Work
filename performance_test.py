@@ -14,7 +14,7 @@ total_start = time.perf_counter()
 cadseek_hostname = 'http://fdxx90app731.jdnet.deere.com'
 cadseek_search_api = cadseek_hostname + '/api/v1/actions/search'
 cadseek_dataset = '*'
-cadseek_apikey_read = 'ax75bb83rs21jj98bw88ot50'
+cadseek_apikey_read = ''
 
 rows_in_file = 0
 unqiue_parent_cad_found = 0
