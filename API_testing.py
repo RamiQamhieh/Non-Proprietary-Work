@@ -11,7 +11,7 @@ class Iseek:
 	def __init__(self):
 		self.server_name = "http://127.0.0.1"
 		self.params = {}
-		self.headers = {'user-agent': 'my-app/0.0.1', 'Cadseek-Key': '181ed793a55341669132e3797bc1bff7f13cd29bd004440e809d2bfe782a3f1b'}
+		self.headers = {'': '', 'Cadseek-Key': ''}
 		self.manifest_entries = []
 
 	def get_manifest_id (self, file_name):
